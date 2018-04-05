@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 2.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Andrew Novotny.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -55,6 +55,25 @@ def run_test_practice_problem2a():
     print('--------------------------------------------------')
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
+    expected = (2, 4, 5, 6, -10)
+    actual = practice_problem2a(([0, 2, 3, 4, -12]), 2)
+    print('Expected: ', expected)
+    print('Actual: ', actual)
+
+    expected = (4, 6, 7, 8, -8)
+    actual = practice_problem2a(([0, 2, 3, 4, -12]), 4)
+    print('Expected: ',  expected)
+    print('Actual: ', actual)
+
+    expected = (-2, 0, 1, 2, -14)
+    actual = practice_problem2a(([0, 2, 3, 4, -12]), -2)
+    print('Expected: ',  expected)
+    print('Actual: ',  actual)
+
+    expected = (10, 12, 13, 14, -2)
+    actual = practice_problem2a(([0, 2, 3, 4, -12]), 10)
+    print('Expected: ', expected)
+    print('Actual: ', actual)
 
 
 def practice_problem2a(sequence, delta):
@@ -83,7 +102,11 @@ def practice_problem2a(sequence, delta):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ####################################################################
-
+    length = len(sequence)
+    new = ()
+    for k in range(length):
+        new = new + (sequence[k] + delta,)
+    return new
 
 def run_test_practice_problem2b():
     """ Tests the   practice_problem2b  function. """
@@ -177,7 +200,11 @@ def practice_problem2b(sequence):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   10 minutes.
     ####################################################################
-
+    length = len(sequence)
+    new = ''
+    for k in range(length):
+        new = new + sequence[k][:1]
+    return new
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
